@@ -12,4 +12,5 @@ Mbed OS version: 6.15.0
 cyles staticFn          : 16  0.095 us  
 cyles callback staticFn : 35  0.208 us  
 cyles callback memberFn : 51  0.304 us  
+cyles cthunk            : 277  1.649 us  
 ```

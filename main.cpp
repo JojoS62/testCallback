@@ -30,6 +30,7 @@ public:
 Foo foo;
 
 Callback<void()>  cbMember(callback(&foo, &Foo::memberFn));
+CThunk<Foo> cthunk(&foo);
 
 
 
@@ -51,6 +52,11 @@ int main()
     t1 = getDwtCyccnt();
     cbMember();
     printf("cyles callback memberFn : %lu  %.3f us\n", t2-t1, (t2-t1)/168.0f);
+
+    cthunk.callback(&Foo::memberFn);
+    t1 = getDwtCyccnt();
+    cthunk();
+    printf("cyles cthunk            : %lu  %.3f us\n", t2-t1, (t2-t1)/168.0f);
 
 
     while(1) {
