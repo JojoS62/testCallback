@@ -1,0 +1,10 @@
+{
+    "requires": ["bare-metal"],
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate": 115200,
+            "target.c_libs": "std",
+            "target.printf_lib": "std"
+        }
+    }
+}
